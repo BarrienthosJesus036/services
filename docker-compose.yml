@@ -13,8 +13,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '2.0'
-          memory: 4GB
+          cpus: '1.0'
+          memory: 2GB
 
   redis:
     image: redis:8.6-alpine
@@ -28,7 +28,7 @@ services:
     deploy:
       resources:
         reservations:
-          memory: 2GB
+          memory: 1GB
     depends_on:
       - storage
 
