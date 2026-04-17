@@ -1,0 +1,7 @@
+*
+
+!.env.example
+!.prettierrc
+!docker-compose.yml
+!README.md
+!.gitignore
