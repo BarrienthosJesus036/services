@@ -4,7 +4,7 @@ services:
     container_name: rustfs_local
     restart: always
     ports:
-      - 0.0.0.0:${STORAGE_ACCESS_PORT}:9000
+      - 127.0.0.1:${STORAGE_ACCESS_PORT}:9000
     volumes:
       - ./mnt/rustfs/data:/data:rw
     environment:
@@ -21,7 +21,7 @@ services:
     container_name: redis.8.6
     restart: always
     ports:
-      - 0.0.0.0:${DB_REDIS_PORT}:6379
+      - 127.0.0.1:${DB_REDIS_PORT}:6379
     command: redis-server --appendonly yes --save "" --maxmemory 2gb --maxmemory-policy noeviction --tcp-keepalive 60
     volumes:
       - ./mnt/redis/data:/data
@@ -38,7 +38,7 @@ services:
     restart: always
     shm_size: 4gb
     ports:
-      - 0.0.0.0:${DB_POSTGRES_PORT}:5432
+      - 127.0.0.1:${DB_POSTGRES_PORT}:5432
     environment:
       - POSTGRES_USER=${DB_POSTGRES_USER}
       - POSTGRES_PASSWORD=${DB_POSTGRES_PASSWORD}
