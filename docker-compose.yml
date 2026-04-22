@@ -22,7 +22,7 @@ services:
     restart: always
     ports:
       - 127.0.0.1:${DB_REDIS_PORT}:6379
-    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lfu --tcp-keepalive 60
+    command: redis-server --appendonly yes --maxmemory 1gb --maxmemory-policy noeviction --tcp-keepalive 60
     volumes:
       - ./mnt/redis/data:/data
     deploy:
